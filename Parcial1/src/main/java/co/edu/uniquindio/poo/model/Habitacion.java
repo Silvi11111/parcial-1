@@ -88,8 +88,5 @@ public class Habitacion {
                 ", estado=" + Arrays.toString(estado) +
                 '}';
     }
-    private static String []recorrerArreglohabitacion(String numeroHabitacion, String[] tipo, byte piso, double precioNoche, int capacidad, String[] estado){
-
-    }
 
 }

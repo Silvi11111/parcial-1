@@ -15,6 +15,8 @@ public class Hotel {
     private String nit;
     private String direccion;
     private String telefono;
+    private Habitacion[] arregloHabitaciones;
+    private Reserva[] arregloReservas;
     private char [][] matrizOcupacion;
     private List<Huesped> listaHuespedes;
     private List<Habitacion> listaHabitaciones;
@@ -23,17 +25,19 @@ public class Hotel {
 
     //constructor
 
-
-    public Hotel(String nombreComercial,String nit, String direccion, String telefono, Habitacion[] arregloHabitaciones, Reserva[] arregloReserva, char[][] matrizOcupacion, List<Huesped> listaHuespedes, List<Habitacion> listaHabitaciones, List<Reserva> listaReservas) {
+    public Hotel(String nombreComercial, String nit, String direccion, String telefono, Habitacion[] arregloHabitaciones, Reserva[] arregloReservas, char[][] matrizOcupacion, List<Huesped> listaHuespedes, List<Habitacion> listaHabitaciones, List<Reserva> listaReservas) {
         this.nombreComercial = nombreComercial;
         this.nit = nit;
         this.direccion = direccion;
         this.telefono = telefono;
+        this.arregloHabitaciones = arregloHabitaciones;
+        this.arregloReservas = arregloReservas;
         this.matrizOcupacion = matrizOcupacion;
         this.listaHuespedes = listaHuespedes;
         this.listaHabitaciones = listaHabitaciones;
         this.listaReservas = listaReservas;
     }
+
 
     //getters y setters :p
 
@@ -53,6 +57,14 @@ public class Hotel {
         this.nit = nit;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     public String getTelefono() {
         return telefono;
     }
@@ -61,12 +73,20 @@ public class Hotel {
         this.telefono = telefono;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public Habitacion[] getArregloHabitaciones() {
+        return arregloHabitaciones;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setArregloHabitaciones(Habitacion[] arregloHabitaciones) {
+        this.arregloHabitaciones = arregloHabitaciones;
+    }
+
+    public Reserva[] getArregloReservas() {
+        return arregloReservas;
+    }
+
+    public void setArregloReservas(Reserva[] arregloReservas) {
+        this.arregloReservas = arregloReservas;
     }
 
     public char[][] getMatrizOcupacion() {
@@ -111,13 +131,16 @@ public class Hotel {
                 ", nit='" + nit + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
+                ", arregloHabitaciones=" + Arrays.toString(arregloHabitaciones) +
+                ", arregloReservas=" + Arrays.toString(arregloReservas) +
                 ", matrizOcupacion=" + Arrays.toString(matrizOcupacion) +
                 ", listaHuespedes=" + listaHuespedes +
                 ", listaHabitaciones=" + listaHabitaciones +
                 ", listaReservas=" + listaReservas +
                 '}';
     }
-    public String registrarHuesped(String documento, String nombreCompleto, byte edad,String ciudadProcedencia, String telefono ){
+
+    public String registrarHuesped(String documento, String nombreCompleto, byte edad, String ciudadProcedencia, String telefono ){
         String mensaje = "";
         Huesped buscado = buscarHuesped(telefono);
         if(buscado != null){

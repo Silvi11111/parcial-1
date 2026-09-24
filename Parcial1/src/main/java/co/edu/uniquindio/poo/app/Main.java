@@ -44,7 +44,7 @@ public class Main {
 
         }while(opcion != 0);
 
-        private static void crearHuesped(Hotel hotel) {
+        private void crearHuesped(Hotel hotel) {
 
             String documento= JOptionPane.showInputDialog(null,"Ingrese el documento de identidad: ");
             String nombreCompleto = JOptionPane.showInputDialog(null,"Ingrese su nombre completo: ");
