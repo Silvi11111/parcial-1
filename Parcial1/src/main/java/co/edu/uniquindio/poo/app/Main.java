@@ -24,7 +24,7 @@ public class Main {
             opcion = Integer.valueOf(JOptionPane.showInputDialog(null,
                     "Por favor selecciones una opcion :\n"+
                             "1. Registrar huesped\n" +
-                            "2. Consultar huesped\n" +
+                            "2. Consultar huesped por número de teléfono\n" +
                             "3. Analizar matriz de ocupación semanal\n" +
                             "4. Identificar reservas especiales\n" +
                             "5. Consultar ingresos por fecha"+
@@ -46,15 +46,14 @@ public class Main {
 
         private static void crearHuesped(Hotel hotel) {
 
-            String nombres = JOptionPane.showInputDialog(null,"Ingrese los nombres del estudiante nuevo");
-            String apellidos = JOptionPane.showInputDialog(null,"Por favor ingresar los apellidos del estudiante nuevo");
-            String identificacion = JOptionPane.showInputDialog(null,"Por favor ingresar la indentificaion del estudiante nuevo");
-            String edad = JOptionPane.showInputDialog(null,"Por favor ingresar la edad del estudiante nuevo");
-            byte edadEstudiante = Byte.valueOf(edad);
-            String correo = JOptionPane.showInputDialog(null,"Por favor ingresar el correo del estudiante nuevo");
-            String telefono = JOptionPane.showInputDialog(null,"Por favor ingresar el telefono del estudiante nuevo");
+            String documento= JOptionPane.showInputDialog(null,"Ingrese el documento de identidad: ");
+            String nombreCompleto = JOptionPane.showInputDialog(null,"Ingrese su nombre completo: ");
+            String edad = JOptionPane.showInputDialog(null,"Ingrese su edad: ");
+            byte edadHuesped = Byte.valueOf(edad);
+            String ciudadProcedencia = JOptionPane.showInputDialog(null,"Ingrese la ciudad de donde proviene: ");
+            String telefono = JOptionPane.showInputDialog(null,"ingrese su número telefónico: ");
 
-            String resultado = hotel.registrarEstudiante(nombres,apellidos,identificacion,edadEstudiante,correo,telefono);
+            String resultado = hotel.registrarHuesped(documento,nombreCompleto,edad,ciudadProcedencia,telefono);
 
             JOptionPane.showMessageDialog(null,resultado);
 

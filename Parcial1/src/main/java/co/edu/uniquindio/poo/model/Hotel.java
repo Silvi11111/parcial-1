@@ -117,4 +117,24 @@ public class Hotel {
                 ", listaReservas=" + listaReservas +
                 '}';
     }
+    public String registrarHuesped(String documento, String nombreCompleto, byte edad,String ciudadProcedencia, String telefono ){
+        String mensaje = "";
+        Huesped buscado = buscarHuesped(telefono);
+        if(buscado != null){
+            return "Error, el huesped que usted desea registrar ya se encuentra registrado";
+        }else{
+            Huesped huespedNuevo = new Huesped(documento,nombreCompleto,edad,ciudadProcedencia,telefono);
+            listaHuespedes.add(huespedNuevo);
+            mensaje = "Huesped registrado con exito";
+        }
+        return mensaje;
+    }
+    public Huesped buscarHuesped (String telefono){
+        for(Huesped aux : listaHuespedes){
+            if(aux.getTelefono().equals(telefono)){
+                return aux;
+            }
+        }
+        return null;
+    }
 }
