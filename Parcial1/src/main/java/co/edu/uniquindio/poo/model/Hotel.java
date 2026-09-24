@@ -15,9 +15,7 @@ public class Hotel {
     private String nit;
     private String direccion;
     private String telefono;
-
     private char [][] matrizOcupacion;
-
     private List<Huesped> listaHuespedes;
     private List<Habitacion> listaHabitaciones;
     private List<Reserva> listaReservas;

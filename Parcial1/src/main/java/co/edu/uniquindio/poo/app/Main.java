@@ -15,7 +15,7 @@ import javax.swing.*;
 public class Main {
     static void main() {
         JOptionPane.showMessageDialog(null,"Bienvenidos al sistema de gestión del hotel StayPlus");
-        Habitacion habitacion=
+
         Hotel hotel = new Hotel("Hotel StayPlus", "874.654.315-1", "Av. Principal", "3123456789",);
         //CRUD create, read, update,delete
         int opcion;
