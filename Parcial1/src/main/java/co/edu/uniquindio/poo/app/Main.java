@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.app;
 
+import co.edu.uniquindio.poo.model.Habitacion;
 import co.edu.uniquindio.poo.model.Hotel;
 
 import javax.swing.*;
@@ -14,13 +15,8 @@ import javax.swing.*;
 public class Main {
     static void main() {
         JOptionPane.showMessageDialog(null,"Bienvenidos al sistema de gestión del hotel StayPlus");
-        String nombreComercial = JOptionPane.showInputDialog(null,"Ingrese el nombre del hotel: ");
-        String nit = JOptionPane.showInputDialog(null,"Ingrese el nit del hotel: ");
-        String direccion = JOptionPane.showInputDialog(null,"Ingrese la dirección del hotel: ");
-
-
-
-        Hotel hotel= new Hotel(nombreComercial,nit,direccion,telefono);
+        Habitacion habitacion=
+        Hotel hotel = new Hotel("Hotel StayPlus", "874.654.315-1", "Av. Principal", "3123456789",);
         //CRUD create, read, update,delete
         int opcion;
 
@@ -29,7 +25,9 @@ public class Main {
                     "Por favor selecciones una opcion :\n"+
                             "1. Registrar huesped\n" +
                             "2. Consultar huesped\n" +
-                            "3. "+
+                            "3. Analizar matriz de ocupación semanal\n" +
+                            "4. Identificar reservas especiales\n" +
+                            "5. Consultar ingresos por fecha"+
 
                             ""));
 
@@ -56,12 +54,13 @@ public class Main {
             String correo = JOptionPane.showInputDialog(null,"Por favor ingresar el correo del estudiante nuevo");
             String telefono = JOptionPane.showInputDialog(null,"Por favor ingresar el telefono del estudiante nuevo");
 
-            String resultado = curso.registrarEstudiante(nombres,apellidos,identificacion,edadEstudiante,correo,telefono);
+            String resultado = hotel.registrarEstudiante(nombres,apellidos,identificacion,edadEstudiante,correo,telefono);
 
             JOptionPane.showMessageDialog(null,resultado);
 
 
         }
+
 
     }
 }
