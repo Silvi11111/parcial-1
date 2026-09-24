@@ -1,9 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="11b25889-cb7c-4de9-9a76-e3e4104e23c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/model/Habitacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/model/Hotel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/model/Huesped.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/model/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/app/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0529215820226578" />
+      <entry key="MS500" value="1.5555738665761307" />
+      <entry key="S2" value="1.9297935654350444" />
+      <entry key="S5" value="2.2809926290894467" />
+      <entry key="S10" value="2.556737965333538" />
+      <entry key="S30" value="3.3824356111945915" />
+      <entry key="S60" value="5.98208246512206" />
+      <entry key="M2" value="12.23490388068653" />
+      <entry key="M5" value="25.068166033372083" />
+      <entry key="M10" value="35.48654487782501" />
+      <entry key="M15" value="43.05761453196263" />
+      <entry key="M30" value="61.130829909525275" />
+      <entry key="H1" value="81.2723947788394" />
+      <entry key="H2" value="97.11760290199055" />
+      <entry key="H4" value="107.1669669582549" />
+      <entry key="D1" value="116.89021381129085" />
+      <entry key="W1" value="118.6950362906518" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="3.8826048835904896E-83" />
+      <entry key="S5" value="1.5266806474693837E-33" />
+      <entry key="S10" value="7.285214954248303E-17" />
+      <entry key="S30" value="1.1701169342037323E-5" />
+      <entry key="S60" value="0.007609645365955086" />
+      <entry key="M2" value="0.19481394085425072" />
+      <entry key="M5" value="1.3682558343851405" />
+      <entry key="M10" value="2.8146601464700476" />
+      <entry key="M15" value="4.048308705530877" />
+      <entry key="M30" value="7.250509367684283" />
+      <entry key="H1" value="10.954942415085654" />
+      <entry key="H2" value="13.904182344037215" />
+      <entry key="H4" value="15.78280012738149" />
+      <entry key="D1" value="17.604356696851422" />
+      <entry key="W1" value="17.942803199162924" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.8705518481181846" />
+      <entry key="MS500" value="1.0389994752781984" />
+      <entry key="S2" value="1.5491962540631232" />
+      <entry key="S5" value="2.057918679243577" />
+      <entry key="S10" value="2.421972498787476" />
+      <entry key="S30" value="3.3208563575396886" />
+      <entry key="S60" value="5.938109035522941" />
+      <entry key="M2" value="12.379475154825034" />
+      <entry key="M5" value="26.394791665749246" />
+      <entry key="M10" value="38.27063025691496" />
+      <entry key="M15" value="47.0799116814874" />
+      <entry key="M30" value="68.3606931066576" />
+      <entry key="H1" value="92.21248746131415" />
+      <entry key="H2" value="111.0125404697492" />
+      <entry key="H4" value="122.94456233094132" />
+      <entry key="D1" value="134.4936086644516" />
+      <entry key="W1" value="136.63769957456083" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3JmNaT7HYjDhnMIWpQ0wX41AmrJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/silva/Desktop/uniquindio-programacion/programacion1/parcial 1/repositorio parcial1/parcial 1/Parcial1/src/main/java/co/edu/uniquindio/poo/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-34e2839f716b-intellij.indexing.shared.core-IU-262.9437.185" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.9437.185" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11b25889-cb7c-4de9-9a76-e3e4104e23c5" name="Changes" comment="" />
+      <created>1790262349973</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790262349973</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/co/edu/uniquindio/poo/app/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>
