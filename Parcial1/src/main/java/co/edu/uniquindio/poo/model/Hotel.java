@@ -1,12 +1,18 @@
 package co.edu.uniquindio.poo.model;
 
 import java.util.Arrays;
+/**
+ *Esta clase representa la clase principal del hotel
+ *@version 1.0
+ *@autor Silvana López
+ *@fecha 24/09/2026
+ */
 
 public class Hotel {
-    private String nombreComercial;
-    private String nit;
-    private String direccion;
-    private String telefono;
+    private String nombreComercial="StayPlus";
+    private String nit="036.459.945.Y";
+    private String direccion="Armenia Quindio";
+    private String telefono="1234567890";
     private Habitacion[] arregloHabitaciones;
     private Reserva[] arregloReserva;
     private char [][] matrizOcupacion;

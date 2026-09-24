@@ -2,6 +2,13 @@ package co.edu.uniquindio.poo.model;
 
 import java.util.Arrays;
 
+/**
+ *Esta clase representa la reserva de un hotel
+ *@version 1.0
+ *@autor Silvana López
+ *@fecha 24/09/2026
+ */
+
 public class Reserva {
     private String codigo;
     private String fecha;

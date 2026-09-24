@@ -1,4 +1,10 @@
 package co.edu.uniquindio.poo.model;
+/**
+ *Esta clase representa la habitacion de un hotel
+ *@version 1.0
+ *@autor Silvana López
+ *@fecha 24/09/2026
+ */
 
 import java.util.Arrays;
 
