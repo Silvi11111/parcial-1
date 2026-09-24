@@ -77,4 +77,7 @@ public class Huesped {
                 ", ciudadProcedencia='" + ciudadProcedencia + '\'' +
                 '}';
     }
+    public static void registrarHuesped(){
+        
+    }
 }
