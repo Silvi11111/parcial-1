@@ -14,13 +14,13 @@ public class Reserva {
     private String fecha;
     private int numeroNoches;
     private int cantidadHuespedes;
-    private String [] estado={"pendiente","confirmada","finalizada"};
-    private String[] metodoPago={"efectivo","tarjeta","transferencia bancaria"};
+    private String  estado;//{"pendiente","confirmada","finalizada"}
+    private String metodoPago;//{"efectivo","tarjeta","transferencia bancaria"};
     private double valorTotal;
 
     //constructores
 
-    public Reserva(String codigo, String fecha, int numeroNoches, int cantidadHuespedes, String[] estado, String[] metodoPago, double valorTotal) {
+    public Reserva(String codigo, String fecha, int numeroNoches, int cantidadHuespedes, String estado, String metodoPago, double valorTotal) {
         this.codigo = codigo;
         this.fecha = fecha;
         this.numeroNoches = numeroNoches;
@@ -29,6 +29,7 @@ public class Reserva {
         this.metodoPago = metodoPago;
         this.valorTotal = valorTotal;
     }
+
 
     //getters y setters
 
@@ -64,19 +65,19 @@ public class Reserva {
         this.cantidadHuespedes = cantidadHuespedes;
     }
 
-    public String[] getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(String[] estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    public String[] getMetodoPago() {
+    public String getMetodoPago() {
         return metodoPago;
     }
 
-    public void setMetodoPago(String[] metodoPago) {
+    public void setMetodoPago(String metodoPago) {
         this.metodoPago = metodoPago;
     }
 
@@ -87,6 +88,7 @@ public class Reserva {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
+
     //to string
 
     @Override
@@ -96,9 +98,10 @@ public class Reserva {
                 ", fecha='" + fecha + '\'' +
                 ", numeroNoches=" + numeroNoches +
                 ", cantidadHuespedes=" + cantidadHuespedes +
-                ", estado=" + Arrays.toString(estado) +
-                ", metodoPago=" + Arrays.toString(metodoPago) +
+                ", estado='" + estado + '\'' +
+                ", metodoPago='" + metodoPago + '\'' +
                 ", valorTotal=" + valorTotal +
                 '}';
     }
 }
+

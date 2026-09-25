@@ -1,7 +1,8 @@
 package co.edu.uniquindio.poo.model;
 
+import javax.swing.*;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  *Esta clase representa la clase principal del hotel
@@ -17,25 +18,26 @@ public class Hotel {
     private String telefono;
     private Habitacion[] arregloHabitaciones;
     private Reserva[] arregloReservas;
-    private char [][] matrizOcupacion;
-    private List<Huesped> listaHuespedes;
-    private List<Habitacion> listaHabitaciones;
-    private List<Reserva> listaReservas;
+    private char[][] matrizOcupacion;
+    private ArrayList<Huesped> listaHuespedes;
+    private ArrayList<Habitacion> listaHabitaciones;
+    private ArrayList<Reserva> listaReservas;
 
 
     //constructor
 
-    public Hotel(String nombreComercial, String nit, String direccion, String telefono, Habitacion[] arregloHabitaciones, Reserva[] arregloReservas, char[][] matrizOcupacion, List<Huesped> listaHuespedes, List<Habitacion> listaHabitaciones, List<Reserva> listaReservas) {
+    public Hotel(String nombreComercial, String nit, String telefono, String direccion, Habitacion[] arregloHabitaciones, Reserva[] arregloReservas, char[][] matrizOcupacion) {
         this.nombreComercial = nombreComercial;
         this.nit = nit;
-        this.direccion = direccion;
         this.telefono = telefono;
+        this.direccion = direccion;
         this.arregloHabitaciones = arregloHabitaciones;
         this.arregloReservas = arregloReservas;
         this.matrizOcupacion = matrizOcupacion;
-        this.listaHuespedes = listaHuespedes;
-        this.listaHabitaciones = listaHabitaciones;
-        this.listaReservas = listaReservas;
+        listaHuespedes = new ArrayList<>();
+        listaHabitaciones = new ArrayList<>();
+        listaReservas = new ArrayList<>();
+
     }
 
 
@@ -97,27 +99,27 @@ public class Hotel {
         this.matrizOcupacion = matrizOcupacion;
     }
 
-    public List<Huesped> getListaHuespedes() {
+    public ArrayList<Huesped> getListaHuespedes() {
         return listaHuespedes;
     }
 
-    public void setListaHuespedes(List<Huesped> listaHuespedes) {
+    public void setListaHuespedes(ArrayList<Huesped> listaHuespedes) {
         this.listaHuespedes = listaHuespedes;
     }
 
-    public List<Habitacion> getListaHabitaciones() {
+    public ArrayList<Habitacion> getListaHabitaciones() {
         return listaHabitaciones;
     }
 
-    public void setListaHabitaciones(List<Habitacion> listaHabitaciones) {
+    public void setListaHabitaciones(ArrayList<Habitacion> listaHabitaciones) {
         this.listaHabitaciones = listaHabitaciones;
     }
 
-    public List<Reserva> getListaReservas() {
+    public ArrayList<Reserva> getListaReservas() {
         return listaReservas;
     }
 
-    public void setListaReservas(List<Reserva> listaReservas) {
+    public void setListaReservas(ArrayList<Reserva> listaReservas) {
         this.listaReservas = listaReservas;
     }
 
@@ -140,21 +142,134 @@ public class Hotel {
                 '}';
     }
 
-    public String registrarHuesped(String documento, String nombreCompleto, byte edad, String ciudadProcedencia, String telefono ){
+    public String registrarHuesped(String documento, String nombreCompleto, byte edad, String ciudadProcedencia, String telefono) {
         String mensaje = "";
-        Huesped buscado = buscarHuesped(telefono);
-        if(buscado != null){
+        Huesped buscado = verificarHuesped(telefono);
+        if (buscado != null) {
             return "Error, el huesped que usted desea registrar ya se encuentra registrado";
-        }else{
-            Huesped huespedNuevo = new Huesped(documento,nombreCompleto,edad,ciudadProcedencia,telefono);
+        } else {
+            Huesped huespedNuevo = new Huesped(documento, nombreCompleto, edad, ciudadProcedencia, telefono);
             listaHuespedes.add(huespedNuevo);
             mensaje = "Huesped registrado con exito";
         }
         return mensaje;
     }
-    public Huesped buscarHuesped (String telefono){
-        for(Huesped aux : listaHuespedes){
-            if(aux.getTelefono().equals(telefono)){
+
+    public Huesped verificarHuesped(String telefono) {
+        for (Huesped aux : listaHuespedes) {
+            if (aux.getTelefono().equals(telefono)) {
+                return aux;
+            }
+        }
+        return null;
+    }
+    public String buscarHuesped(String telefono) {
+        String mensaje = "";
+        for (Huesped aux : listaHuespedes) {
+            if (aux.getTelefono().equals(telefono)) {
+                mensaje+="Se encontró un huesped.";
+            }else{
+                mensaje+="No se encontró ningún huésped registrado con el teléfono: ";
+            }
+        }
+
+        return mensaje;
+    }
+    public String calcularOcupacionMayor(char matriz[][],String[] dias){
+        int numHabitaciones = matriz.length;
+        int numDias = matriz[0].length;
+        int maxOcupadas = -1;
+        String diaMasOcupado = "";
+        for (int col = 0; col < numDias; col++) {
+            int ocupadas = 0;
+            for (int fila = 0; fila < numHabitaciones; fila++) {
+                if (matriz[fila][col] == 'O') {
+                    ocupadas++;
+                }
+            }
+            // Guardamos el día que supere el récord de ocupación
+            if (ocupadas > maxOcupadas) {
+                maxOcupadas = ocupadas;
+                diaMasOcupado = dias[col];
+            }
+        }
+        return"el dia con más habitaciones ocupadas: "+ diaMasOcupado + " con " + maxOcupadas + " habitaciones ocupadas)";
+
+    }
+    public String calcularOcupacionMenor(char matriz[][],String[] dias){
+        int numHabitaciones = matriz.length;
+        int numDias = matriz[0].length;
+
+        int minOcupadas = Integer.MAX_VALUE; // Iniciamos con el valor más alto posible
+        String diaMenosOcupado = "";
+
+        for (int col = 0; col < numDias; col++) {
+            int ocupadas = 0;
+            for (int fila = 0; fila < numHabitaciones; fila++) {
+                if (matriz[fila][col] == 'O') {
+                    ocupadas++;
+                }
+            }
+
+            // Guardamos el día con el conteo más bajo
+            if (ocupadas < minOcupadas) {
+                minOcupadas = ocupadas;
+                diaMenosOcupado = dias[col];
+            }
+        }
+
+        return"El dia con menos habitaciones ocupadas:"+ diaMenosOcupado + " con " + minOcupadas + " habitaciones ocupadas)";
+    }
+    public String registrarReservacion(String codigoReserva,String fecha,int tipoHabitacion,int numeroNoches,int cantidadHuespedes,String estado,double valor,String metodoPago) {
+        String mensaje = "";
+        Reserva buscado = verificarReserva(codigoReserva);
+        if (buscado != null) {
+            return "Error, la reserva que usted desea registrar ya se encuentra registrada";
+        } else {
+            Reserva reservaNuevo = new Reserva(codigoReserva, fecha, numeroNoches, cantidadHuespedes, estado,metodoPago,valor);
+            listaReservas.add(reservaNuevo);
+            mensaje = "Reserva registrada con exito";
+        }
+        return mensaje;
+
+    }
+    public Reserva verificarReserva(String codigoReserva){
+        for (Reserva aux : listaReservas) {
+            if (aux.getCodigo().equals(codigoReserva)) {
+                return aux;
+            }
+        }
+        return null;
+    }
+    public String reservacionEspecial(String codigo){
+        String mensaje="";
+        String invertida = "";
+
+        for (int i = codigo.length() - 1; i >= 0; i--) {
+            invertida += codigo.charAt(i);
+        }
+        if (codigo.equals(invertida)){
+            mensaje+="Es una reserva especial (capicua)";
+        }else{
+            mensaje+="Es una reserva común (no es capicua)";
+        }
+
+        return mensaje;
+    }
+    public String consultarFechaingresos(String fecha){
+        String mensaje="";
+        Reserva buscado = verificarFechaingresos(fecha);
+        if (buscado != null) {
+            return "La fecha aparece en una reserva";
+        } else {
+            mensaje = "Por el momento, no hay reservas en esa fecha";
+        }
+
+        return mensaje;
+    }
+    public Reserva verificarFechaingresos(String fecha){
+        for (Reserva aux : listaReservas) {
+            if (aux.getFecha().equals(fecha)) {
                 return aux;
             }
         }

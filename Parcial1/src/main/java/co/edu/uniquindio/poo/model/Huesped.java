@@ -17,13 +17,15 @@ public class Huesped {
 
     //constructor
 
-    public Huesped(String documento, String nombreCompleto, byte edad, String numero, String ciudadProcedencia) {
+    public Huesped(String documento, String nombreCompleto, byte edad, String telefono, String ciudadProcedencia) {
         this.documento = documento;
         this.nombreCompleto = nombreCompleto;
         this.edad = edad;
         this.telefono = telefono;
         this.ciudadProcedencia = ciudadProcedencia;
     }
+
+
     // getters y setters
 
     public String getDocumento() {
